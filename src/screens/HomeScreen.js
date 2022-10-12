@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Container } from "@mui/system";
 import { useState } from "react";
 import styled from "styled-components";
+import SearchBar from "../components/SearchBar";
 
 const ItemHome = styled(Paper)(({ theme }) => ({
     border: "none",
@@ -24,15 +25,15 @@ const TitleCard = styled(Typography)(({ theme }) => ({
 }));
 
 export default function HomeScreen() {
-    const[pokemonSearched, setPokemonSearched]=useState("");
+    /*const[pokemonSearched, setPokemonSearched]=useState("");
     const navigate = useNavigate();
     const searchPokemonHandler = ()=>{
         console.log(pokemonSearched);
         navigate(`/search-pokemon:${pokemonSearched}`);
-    }
+    }*/
     return (
         <Container
-            sx={{ backgroundColor: "#424242", height: "100vh", minWidth: "100vw", display:"flex", justifyContent:"center", alignItems:"flex-start" }}
+            sx={{ backgroundColor: "#29304f", height: "100vh", minWidth: "100vw", display:"flex", justifyContent:"center", alignItems:"flex-start" }}
         >
             <Grid
                 container
@@ -51,33 +52,7 @@ export default function HomeScreen() {
                         What are you looking for?
                     </Typography>
 
-                    <Paper
-                        onSubmit={(e)=>e.preventDefault}
-                        elevation={4}
-                        
-                        sx={{
-                            borderRadius: "3rem",
-                            padding: ".8rem .8rem",
-                            display: "flex",
-                            color: "#ffff",
-                            backgroundColor: "#212121",
-                            marginBottom:"2rem",
-                        }}
-                    >
-                        <IconButton color="inherit" size="medium">
-                            <CatchingPokemon />
-                        </IconButton>
-                        <InputBase
-                            value={pokemonSearched}
-                            onChange={(e)=>{setPokemonSearched(e.target.value)}}
-                            placeholder="Search pokemons, items e etc"
-                            fullWidth
-                            sx={{ fontSize: "1.4rem", color: "#ffffff" }}
-                        />
-                        <IconButton type="button" color="inherit" onClick={searchPokemonHandler}>
-                            <Search />
-                        </IconButton>
-                    </Paper>
+                    <SearchBar/>
                 </Grid>
                 <Grid item xs={12} justifySelf="center">
                     <ItemHome
