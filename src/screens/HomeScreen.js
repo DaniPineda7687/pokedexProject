@@ -33,7 +33,7 @@ export default function HomeScreen() {
     }*/
     return (
         <Container
-            sx={{ backgroundColor: "#29304f", height: "100vh", minWidth: "100vw", display:"flex", justifyContent:"center", alignItems:"flex-start" }}
+            sx={{ backgroundColor: "#29304f", height: "100vh", minWidth: "100vw", display:"flex", justifyContent:"center", alignItems:"center" }}
         >
             <Grid
                 container
@@ -42,63 +42,18 @@ export default function HomeScreen() {
             >
                 <Grid item xs={12} justifySelf="center">
                     <Typography
-                        variant="h2"
+                        variant="h3"
                         sx={{
                             fontWeight: 600,
                             color: "#ffffff",
                             margin:"2rem",
                         }}
                     >
-                        What are you looking for?
+                        What Pokémon are you looking for?
                     </Typography>
-
                     <SearchBar/>
                 </Grid>
-                <Grid item xs={12} justifySelf="center">
-                    <ItemHome
-                        elevation={6}
-                        component="button"
-                        sx={{ backgroundColor: "#5dbe62" }}
-                    >
-                        <TitleCard>Pokemon</TitleCard>
-                    </ItemHome>
-                </Grid>
-                <Grid item xs={6}>
-                    <ItemHome
-                        elevation={6}
-                        component="button"
-                        sx={{ backgroundColor: "#f7776a" }}
-                    >
-                        <TitleCard>Items</TitleCard>
-                    </ItemHome>
-                </Grid>
-                <Grid item xs={6}>
-                    <ItemHome
-                        elevation={6}
-                        component="button"
-                        sx={{ backgroundColor: "#58a9f4" }}
-                    >
-                        <TitleCard>Moves</TitleCard>
-                    </ItemHome>
-                </Grid>
-                <Grid item xs={6}>
-                    <ItemHome
-                        elevation={6}
-                        component="button"
-                        sx={{ backgroundColor: "#ffce4b" }}
-                    >
-                        <TitleCard>Types</TitleCard>
-                    </ItemHome>
-                </Grid>
-                <Grid item xs={6}>
-                    <ItemHome
-                        elevation={6}
-                        component="button"
-                        sx={{ backgroundColor: "#b862cf" }}
-                    >
-                        <TitleCard>Favorite</TitleCard>
-                    </ItemHome>
-                </Grid>
+                
             </Grid>
         </Container>
     );

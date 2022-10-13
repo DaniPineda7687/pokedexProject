@@ -71,7 +71,7 @@ export default function SearchScreen(){
                         if(item.sprites.other.home.front_default!=null){
                             return(
                                 <Grid item sx={6}>
-                                    <Card sx={{maxWidth:"250px", width:"150px", height:"300px",backgroundColor:"#353d64", borderRadius:"20px"}}>
+                                    <Card sx={{maxWidth:"350px", width:"150px", height:"300px",backgroundColor:"#353d64", borderRadius:"20px"}}>
                                         <CardActionArea>    
                                             <CardMedia
                                             component="img"
@@ -97,7 +97,7 @@ export default function SearchScreen(){
                                                     {transformName(item.name)}
                                                 </Typography>
                                             </CardContent>
-                                            <Box sx={{display:"flex",justifyContent:"center",gap:"10px"}}>
+                                            <Box sx={{display:"flex",justifyContent:"center",gap:"10px"}}  mb={"10px"}>
                                                 {
                                                     item.types.map(item=>{
                                                         return(

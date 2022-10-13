@@ -2,13 +2,21 @@ import { CatchingPokemon, Search } from "@mui/icons-material";
 import { IconButton, InputBase, Paper } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 export default function SearchBar(){
     const[pokemonSearched, setPokemonSearched]=useState("");
     const navigate = useNavigate();
     const searchPokemonHandler = ()=>{
         console.log(pokemonSearched);
-        navigate(`/search-pokemon:${pokemonSearched}`);
+        if(pokemonSearched!==""){
+            navigate(`/search-pokemon:${pokemonSearched}`);
+        }else{
+            toast.error("You must enter a query",{
+                autoClose:2000,
+            });
+            return;
+        }
     }
     return(
         <Paper
@@ -28,7 +36,7 @@ export default function SearchBar(){
             <InputBase
                 value={pokemonSearched}
                 onChange={(e)=>{setPokemonSearched(e.target.value)}}
-                placeholder="Search pokemons, items e etc"
+                placeholder="Search Pokémon"
                 fullWidth
                 sx={{ fontSize: "1.4rem", color: "#ffffff" }}
                 />
