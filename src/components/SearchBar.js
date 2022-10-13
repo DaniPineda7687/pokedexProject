@@ -36,7 +36,7 @@ export default function SearchBar(){
             <InputBase
                 value={pokemonSearched}
                 onChange={(e)=>{setPokemonSearched(e.target.value)}}
-                placeholder="Search Pokémon"
+                placeholder="Search Pokémon "
                 fullWidth
                 sx={{ fontSize: "1.4rem", color: "#ffffff" }}
                 />
