@@ -4,11 +4,11 @@ import HomeScreen from "./screens/HomeScreen";
 import SearchScreen from "./screens/SearchScreen.js";
 function App() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={window.location.pathname || ''}>
         <div className="App">
         <ToastContainer position='bottom-center' limit={1}/>
           <Routes>
-            <Route path="/" element={<HomeScreen/>} />
+            <Route exact path="/" element={<HomeScreen/>} />
             <Route path="search-pokemon:name" element={<SearchScreen/>} />
           </Routes>
         </div>
